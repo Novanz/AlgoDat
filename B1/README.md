@@ -1,5 +1,6 @@
 # TODO
-1.~~Erstellen Sie mit einem beliebigen Texteditor (z.B. vi oder kWrite, Edit)
+
+1. ~~Erstellen Sie mit einem beliebigen Texteditor (z.B. vi oder kWrite, Edit)
 eine Datei Counter.java mit dem in der Vorlesung vorgestellten Java-
 Quelltext der **Klasse** **Counter**.
 Übersetzen Sie die Klasse mit Hilfe des Compileraufrufs `javac Counter.java` .~~
