@@ -1,3 +1,4 @@
+//Counter Klasse aus dem Script
 public class Counter {
     private int x; // Zählerstand
 
@@ -14,5 +15,9 @@ public class Counter {
 
     public void reset() { // Zurücksetzen
         x = 0;
+    }
+    //Aufrgabe 2
+    public void decrement() {
+        x--;
     }
 }
