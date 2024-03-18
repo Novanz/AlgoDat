@@ -1,11 +1,11 @@
 # TODO
-1. Erstellen Sie mit einem beliebigen Texteditor (z.B. vi oder kWrite, Edit)
+1.~~ Erstellen Sie mit einem beliebigen Texteditor (z.B. vi oder kWrite, Edit)
 eine Datei Counter.java mit dem in der Vorlesung vorgestellten Java-
 Quelltext der **Klasse** **Counter**.
-Übersetzen Sie die Klasse mit Hilfe des Compileraufrufs `javac Counter.java` .
+Übersetzen Sie die Klasse mit Hilfe des Compileraufrufs `javac Counter.java` .~~
 
-2. Erweitern Sie die **Klasse Counter** um eine Methode `void decrement()`,
-mit der der Zählerstand um 1 verringert wird, sofern er noch positiv war.
+2. ~~Erweitern Sie die **Klasse Counter** um eine Methode `void decrement()`,
+mit der der Zählerstand um 1 verringert wird, sofern er noch positiv war.~~
 
 3. Schreiben Sie eine eigene **Klasse CounterTest** mit einer statischen main-
 Methode (ähnlich wie in der Vorlesung), die einen Zähler anlegt, der in
