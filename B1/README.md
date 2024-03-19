@@ -21,7 +21,7 @@ thode `void restore()`, mit der der Zähler wieder auf den zuletzt gesi-
 cherten Wert zurückgesetzt wird. Ein Aufruf von restore ohne vorheri-
 ges save() soll zu einer `Fehlermeldung` führe~~  
 
-5. Ableitung einer **Klasse RestrictedCounter** aus Counter
+5. ~~Ableitung einer **Klasse RestrictedCounter** aus Counter
 Wenn man Zähler verwendet, um etwa die in einen Bus
 oder ein Flugzeug einsteigenden Personen zu zählen,
 sollten diese Zähler auch die maximal zulässige Anzahl
@@ -36,7 +36,7 @@ ausgeben.
 Implementieren Sie zusätzlich eine Methode `int freeCapacity()`, die die
 aktuell noch verfügbare freieKapazität liefert.
 Testen Sie Ihre Implementierung von RestrictedCounter mit folgendem Test-
-programm:
+programm:~~
 ```java
 public class RestrictedCounterTest {
 	public static void main(String[] args) {
@@ -54,4 +54,4 @@ public class RestrictedCounterTest {
 	}
 }
 ```
-# test
+# FERTIG
