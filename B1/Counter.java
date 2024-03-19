@@ -1,7 +1,8 @@
 //Counter Klasse aus dem Script
 public class Counter {
     private int x; // Zählerstand
-
+    private int current;
+    
     public Counter() { // Konstruktor
        x = 0;
     }
@@ -19,5 +20,15 @@ public class Counter {
     //Aufrgabe 2
     public void decrement() {
         x--;
+    }
+
+    public void save() {
+        current = x;
+    }
+
+    public void restore() {
+        if(current < 0 ) {
+           System.out.println("Fehler");
+       x = current;     
     }
 }
