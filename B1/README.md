@@ -15,11 +15,11 @@ for-Schleifen mehrfach incrementiert und decrementiert wird.
 Testen Sie mit diesem JAVA-Programm, ob die Implementierung der
 Klasse Counter korrekt ist. (Aufruf: `java CounterTest` )~~
 
-4. Erweitern Sie Ihre **Klasse Counter** um eine Methode `void save()`, die
+4. ~~Erweitern Sie Ihre **Klasse Counter** um eine Methode `void save()`, die
 den aktuellen Zählerstand in einer Hilfsgröße speichert und um eine Me-
 thode `void restore()`, mit der der Zähler wieder auf den zuletzt gesi-
 cherten Wert zurückgesetzt wird. Ein Aufruf von restore ohne vorheri-
-ges save() soll zu einer `Fehlermeldung` führe  
+ges save() soll zu einer `Fehlermeldung` führe~~  
 
 5. Ableitung einer **Klasse RestrictedCounter** aus Counter
 Wenn man Zähler verwendet, um etwa die in einen Bus
