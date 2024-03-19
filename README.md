@@ -1,6 +1,6 @@
 # AlgoDat SS24
 ## B 1
-- [ ] Fertig
+- [x] Fertig
 - [ ] Hochgeladen
 - [ ] Bewertet
 
