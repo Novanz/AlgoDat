@@ -1,17 +1,35 @@
-public class Bruch{
+public class Bruch
+{
     private int num; // Zähler
     private int denom; // Nenner
 
-    public Bruch(int num, int denom) {
+    /* Konstruktor */
+    public Bruch( int num, int denom ) {
+        if ( denom != 0 ) { // Gultiger Bruch
+            if ( denom < 0 ) { // Nenner negativ => Bruch negativ
+                this.num = -num;
+                this.denom = -denom;
+            } else {
+                this.num = num;
+                this.denom = denom;
+                reduce(); // kürzen mittels ggT()
+            }
+        } else { // Nenner = 0
+            throw new ArithmeticException();
+        }
+    }
+
+    public Bruch() { // 0 als Bruch
+        this.num = 0;
+        this.denom = 1;
+    }
+
+    public Bruch( int num ) { // Ganze Zahlen als Bruch
         this.num = num;
-        this.denom = denom;
+        this.denom = 1;
     }
 
-    /* getter */
-    public Bruch get() { // FIX:
-        return this.Bruch;
-    }
-
+    /* getter(redundant) */
     public int getN() {
         return num;
     }
@@ -21,8 +39,37 @@ public class Bruch{
     }
 
     /* printer */
-    // TODO:
+    public String toString() {
+        return num + " / " + denom;
+    }
 
     /* Arithmetik */
     // TODO: add(),sub(),div(),mult()
+    
+    /* sonstige Hilfsmethoden */
+    // TODO: clone(),equals(),compare()
+    private int ggt() { // ggT iterativ
+        int a = Math.abs(num); // falls Zähler negativ
+        int b = denom;
+
+        while (a != 0 && b != 0) {
+            if ( b > a ) {
+                a = a % b;
+            } else {
+                b = b % a;
+            }
+        }
+        return ((b == 0) ? a : b);
+    }
+
+    private void reduce() { //
+        if ( num != 0 ) {
+            int ggt = ggt();
+            num /= ggt;
+            denom /= ggt;
+        } else {
+            denom = 1;
+        }
+    }
+
 }
