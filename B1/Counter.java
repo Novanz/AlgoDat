@@ -5,6 +5,7 @@ public class Counter {
     
     public Counter() { // Konstruktor
        x = 0;
+       current = -1;
     }
     public void increment() { // Hochzählen
        x++;
@@ -29,7 +30,7 @@ public class Counter {
     public void restore() {
         try {
             if(current < 0 ) {
-//                System.out.println("Fehler");
+//              System.out.println("Fehler");
                 throw new Exception("Fehler");
             } else {
                 x = current;
@@ -37,6 +38,7 @@ public class Counter {
         }
         catch(Exception e) {
             System.out.println(e.getMessage());
+            System.exit(1);
         }
     }
 }
