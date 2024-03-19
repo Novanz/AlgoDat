@@ -18,10 +18,12 @@ größten gemeinsamen Teiler zweier positiver Zahlen a und b berechnet.
 ```java
 int ggt (int a, int b)
 // Berechnet den größten gemeinsamen Teiler von a und b
-{ if (b>a)
-return (ggt(b,a));
-else
-return ( (b==0) ? a : ggt(b, a%b) );
+{ 
+    if (b>a) {
+        return (ggt(b,a));
+    } else {
+        return ( (b==0) ? a : ggt(b, a%b) );
+    }
 }
 ```
 2. Testen Sie die Implementierung der Klasse Bruch indem Sie für einige
