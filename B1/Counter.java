@@ -27,8 +27,16 @@ public class Counter {
     }
 
     public void restore() {
-        if(current < 0 ) {
-           System.out.println("Fehler");
-       x = current;     
+        try {
+            if(current < 0 ) {
+//                System.out.println("Fehler");
+                throw new Exception("Fehler");
+            } else {
+                x = current;
+            }
+        }
+        catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
