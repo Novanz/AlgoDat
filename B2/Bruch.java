@@ -34,7 +34,7 @@ public class Bruch {
     }
 
     public int getD() {
-        return num;
+        return denom;
     }
 
     /* printer */
