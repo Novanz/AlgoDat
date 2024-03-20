@@ -14,7 +14,7 @@ public class Bruch {
                 reduce(); // kürzen mittels ggT()
             }
         } else { // Nenner = 0
-            throw new ArithmeticException();
+            throw new ArithmeticException("Teilen durch 0 ist nicht erlaubt!");
         }
     }
 
@@ -77,7 +77,7 @@ public class Bruch {
         int b = denom;
 
         while (a != 0 && b != 0) {
-            if (b > a) {
+            if (a > b) {
                 a = a % b;
             } else {
                 b = b % a;
@@ -86,7 +86,7 @@ public class Bruch {
         return ((b == 0) ? a : b);
     }
 
-    private void reduce() { //
+    private void reduce() {
         if (num != 0) {
             int ggt = ggt();
             num /= ggt;
