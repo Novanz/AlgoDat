@@ -5,7 +5,7 @@
 - [ ] Bewertet
 
 ## B 2
-- [ ] Fertig
+- [x] Fertig
 - [ ] Hochgeladen
 - [ ] Bewertet
 
