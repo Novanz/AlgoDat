@@ -14,7 +14,7 @@ public class Bruch {
                 reduce(); // kürzen mittels ggT()
             }
         } else { // Nenner = 0
-            throw new ArithmeticException("Teilen durch 0 ist nicht erlaubt!");
+            throw new ArithmeticException();
         }
     }
 
