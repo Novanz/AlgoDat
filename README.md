@@ -10,6 +10,6 @@
 - [ ] Bewertet
 
 ## B 3
-- [ ] Fertig
+- [x] Fertig
 - [ ] Hochgeladen
 - [ ] Bewertet
