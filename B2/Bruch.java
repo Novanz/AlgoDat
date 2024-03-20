@@ -1,12 +1,11 @@
-public class Bruch
-{
+public class Bruch {
     private int num; // Zähler
     private int denom; // Nenner
 
     /* Konstruktor */
-    public Bruch( int num, int denom ) {
-        if ( denom != 0 ) { // Gultiger Bruch
-            if ( denom < 0 ) { // Nenner negativ => Bruch negativ
+    public Bruch(int num, int denom) {
+        if (denom != 0) { // Gultiger Bruch
+            if (denom < 0) { // Nenner negativ => Bruch negativ
                 this.num = -num;
                 this.denom = -denom;
             } else {
@@ -24,7 +23,7 @@ public class Bruch
         this.denom = 1;
     }
 
-    public Bruch( int num ) { // Ganze Zahlen als Bruch
+    public Bruch(int num) { // Ganze Zahlen als Bruch
         this.num = num;
         this.denom = 1;
     }
@@ -45,7 +44,7 @@ public class Bruch
 
     /* Arithmetik */
     // TODO: add(),sub(),div(),mult()
-    
+
     /* sonstige Hilfsmethoden */
     // TODO: clone(),equals(),compare()
     private int ggt() { // ggT iterativ
@@ -53,7 +52,7 @@ public class Bruch
         int b = denom;
 
         while (a != 0 && b != 0) {
-            if ( b > a ) {
+            if (b > a) {
                 a = a % b;
             } else {
                 b = b % a;
@@ -63,7 +62,7 @@ public class Bruch
     }
 
     private void reduce() { //
-        if ( num != 0 ) {
+        if (num != 0) {
             int ggt = ggt();
             num /= ggt;
             denom /= ggt;
