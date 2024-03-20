@@ -44,6 +44,31 @@ public class Bruch {
 
     /* Arithmetik */
     // TODO: add(),sub(),div(),mult()
+    public Bruch add(Bruch other) {
+        int num = this.num * other.denom + other.num * this.denom;
+        int denom = this.denom * other.denom;
+        return new Bruch(num, denom);
+    }
+
+    public Bruch sub(Bruch other) {
+        int num = this.num * other.denom - other.num * this.denom;
+        int denom = this.denom * other.denom;
+        return new Bruch(num, denom);
+    }
+
+    public Bruch mult(Bruch other) {
+        int num = this.num * other.num;
+        int denom = this.denom * other.denom;
+        return new Bruch(num, denom);
+    }
+
+    public Bruch reverse() {
+        return new Bruch(denom, num);
+    }
+
+    public Bruch div(Bruch other) {
+        return mult(other.reverse());
+    }
 
     /* sonstige Hilfsmethoden */
     // TODO: clone(),equals(),compare()
