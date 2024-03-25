@@ -20,7 +20,9 @@ public class Counter {
     }
     //Aufrgabe 2
     public void decrement() {
-        x--;
+        if(x < 0) {
+            x--;
+        }
     }
 
     public void save() {
