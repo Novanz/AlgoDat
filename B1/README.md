@@ -1,27 +1,27 @@
 # TODO
 
-1. ~~Erstellen Sie mit einem beliebigen Texteditor (z.B. vi oder kWrite, Edit)
+1. Erstellen Sie mit einem beliebigen Texteditor (z.B. vi oder kWrite, Edit)
 eine Datei Counter.java mit dem in der Vorlesung vorgestellten Java-
 Quelltext der **Klasse** **Counter**.
 Übersetzen Sie die Klasse mit Hilfe des Compileraufrufs `javac Counter.java` .~~
 
-2. ~~Erweitern Sie die **Klasse Counter** um eine Methode `void decrement()`,
+2. Erweitern Sie die **Klasse Counter** um eine Methode `void decrement()`,
 mit der der Zählerstand um 1 verringert wird, sofern er noch positiv war.~~
 
-3. ~~Schreiben Sie eine eigene **Klasse CounterTest** mit einer statischen main-
+3. Schreiben Sie eine eigene **Klasse CounterTest** mit einer statischen main-
 Methode (ähnlich wie in der Vorlesung), die einen Zähler anlegt, der in
 for-Schleifen mehrfach incrementiert und decrementiert wird.
 Übersetzen Sie auch diese Klasse. (Compileraufruf: `javac CounterTest.java` )
 Testen Sie mit diesem JAVA-Programm, ob die Implementierung der
 Klasse Counter korrekt ist. (Aufruf: `java CounterTest` )~~
 
-4. ~~Erweitern Sie Ihre **Klasse Counter** um eine Methode `void save()`, die
+4. Erweitern Sie Ihre **Klasse Counter** um eine Methode `void save()`, die
 den aktuellen Zählerstand in einer Hilfsgröße speichert und um eine Me-
 thode `void restore()`, mit der der Zähler wieder auf den zuletzt gesi-
 cherten Wert zurückgesetzt wird. Ein Aufruf von restore ohne vorheri-
 ges save() soll zu einer `Fehlermeldung` führe~~  
 
-5. ~~Ableitung einer **Klasse RestrictedCounter** aus Counter
+5. Ableitung einer **Klasse RestrictedCounter** aus Counter
 Wenn man Zähler verwendet, um etwa die in einen Bus
 oder ein Flugzeug einsteigenden Personen zu zählen,
 sollten diese Zähler auch die maximal zulässige Anzahl
