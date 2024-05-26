@@ -1,5 +1,5 @@
+package
 import "/home/nan/HFU/SoSe24/AlgoDat/practice/B1/Counter.class"
-
 public class PowerFunctions {
     private int exponent;
     private double zahl;

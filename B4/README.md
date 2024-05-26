@@ -5,29 +5,32 @@ tenzieren experimentell untersucht werden.
 genden angegebenen statischen Methoden zur Berechnung von y = xn .
 Später sollen diese Methoden in anderen Klassen verfügbar gemacht wer-
 den.
-public static double power( double x, int n )
-soll xn = 1 · x · x · . . . x mit Hilfe einer Schleife berechnen. Dabei
-werden n Multiplikationen benötigt.
+```java
+static double power( double x, int n )
+// soll xn = 1 · x · x · . . . x mit Hilfe einer Schleife berechnen. Dabei
+// werden n Multiplikationen benötigt.
 public static double fastPower( double x, int n )
-soll xn unter Verwendung des Square-Multiply Verfahrens berech-
-nen. Dazu sind nur O(log n) Multiplikationen erforderlich.
+// soll xn unter Verwendung des Square-Multiply Verfahrens berechnen.
+// Dazu sind nur O(log n) Multiplikationen erforderlich
+```
+
 2. Ergänzen Sie die Klasse PowerFunctions um zwei private statische Member-
 Variablen countPower und countFastPower, mit deren Hilfe die Anzahl
 der von power bzw. fastPower ausgeführten Multiplikationen gezählt
 werden kann. Prinzipiell könnten Sie dazu int-Variablen benutzen, aber
-zur Übung sollten Sie Objekte der Klasse Counter aus Übung 1 verwen-
-den.
+zur Übung sollten Sie Objekte der Klasse Counter aus Übung 1 verwenden.
 Erweitern Sie die Berechnungsmethoden, so dass bei jeder Multiplikation
 der entsprechende Zähler erhöht wird.
 3. Implementieren Sie folgenden zusätzlichen Methoden für den externen
 Zugriff auf die Zähler:
+```java
 public static void resetCounters()
-setzt beide Zähler auf 0 zurück.
+// setzt beide Zähler auf 0 zurück.
 public static int getCountPower()
-liefert den Zählerstand von countPower
+// liefert den Zählerstand von countPower
 public static int getCountFastPower()
-liefert den Zählerstand von countFastPower
-
+// liefert den Zählerstand von countFastPower
+```
 4. Implementieren Sie schließlich eine neue Klasse PowerFunctionsTest
 mit einem Hauptprogramm, das jeweils 10000 Berechnungen von xn für
 zufällige Argumente x ∈ [0, 1) und n ∈ [0, 1000) mit den beiden Berech-
