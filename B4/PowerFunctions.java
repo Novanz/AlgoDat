@@ -1,5 +1,3 @@
-package
-import "/home/nan/HFU/SoSe24/AlgoDat/practice/B1/Counter.class"
 public class PowerFunctions {
     private int exponent;
     private double zahl;
@@ -9,8 +7,8 @@ public class PowerFunctions {
     public PowerFunctions(int exponent, double zahl) {
         this.exponent = exponent;
         this.zahl = zahl;
-        countPower = 0;
-        countFastPower = 0;
+        this.countPower = new Counter(); // init with 0, see Counter def
+        this.countFastPower = new Counter();
     }
 
     public int getExponent() {
