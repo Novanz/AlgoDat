@@ -32,7 +32,7 @@ public class PowerFunctions {
     }
 
     public void setCountPower(Counter countPower) {
-        this.countPower = countPower;
+        countPower = countPower;
     }
 
     public Counter getCountFastPower() {
@@ -43,11 +43,21 @@ public class PowerFunctions {
         this.countFastPower = countFastPower;
     }
 
-    static double power(double x, int n ) {
-        double result = x;
+    public double power(double x, int n) {
+        double result = 1;
         for (int i = 0; i < n; i++) {
             result*= x;
+            countPower.increment();
         }
         return result;
+    }
+
+    public static double fastPower(double x, int n) {
+        if (n == 0)
+            return 1;
+        else if (n % 2 == 0)
+            return fastPower(x * x, n / 2);
+        else
+            return x * fastPower(x * x, (n - 1) / 2);
     }
 }
