@@ -32,7 +32,7 @@ public class PowerFunctions {
     }
 
     public void setCountPower(Counter countPower) {
-        countPower = countPower;
+        this.countPower = countPower;
     }
 
     public Counter getCountFastPower() {
