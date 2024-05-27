@@ -16,8 +16,8 @@
 
 ## B 4
 
-- [] Fertig
-- [] Hochgeladen
+- [x] Fertig
+- [x] Hochgeladen
 - [] Bewertet
 
 ## B 5
