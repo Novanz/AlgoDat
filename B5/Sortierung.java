@@ -1,11 +1,11 @@
 public class Sortierung {
-    public static void mergeSort(int[] array) {
+    public static void mergeSort(Integer[] array) {
         if (array == null || array.length <= 1) {
             return;
         }
         int mid = array.length / 2;
-        int[] left = new int[mid];
-        int[] right = new int[array.length - mid];
+        Integer[] left = new Integer[mid];
+        Integer[] right = new Integer[array.length - mid];
 
         // Copy elements to left and right subarrays
         System.arraycopy(array, 0, left, 0, mid);
@@ -19,7 +19,7 @@ public class Sortierung {
         merge(left, right, array);
     }
 
-    private static void merge(int[] left, int[] right, int[] array) {
+    private static void merge(Integer[] left, Integer[] right, Integer[] array) {
         int i = 0, j = 0, k = 0;
 
         // Compare elements from left and right subarrays and merge them in sorted order
