@@ -4,6 +4,9 @@ public class PowerFunctions {
     private Counter countPower;
     private Counter countFastPower;
 
+    public PowerFunctions() {
+    }
+
     public PowerFunctions(int exponent, double zahl) {
         this.exponent = exponent;
         this.zahl = zahl;
@@ -27,16 +30,16 @@ public class PowerFunctions {
         this.zahl = zahl;
     }
 
-    public Counter getCountPower() {
-        return countPower;
+    public int getCountPower() {
+        return countPower.get();
     }
 
     public void setCountPower(Counter countPower) {
         this.countPower = countPower;
     }
 
-    public Counter getCountFastPower() {
-        return countFastPower;
+    public int getCountFastPower() {
+        return countFastPower.get();
     }
 
     public void setCountFastPower(Counter countFastPower) {
@@ -52,12 +55,18 @@ public class PowerFunctions {
         return result;
     }
 
-    public static double fastPower(double x, int n) {
+    public double fastPower(double x, int n) {
+        countFastPower.increment();
         if (n == 0)
             return 1;
         else if (n % 2 == 0)
             return fastPower(x * x, n / 2);
         else
             return x * fastPower(x * x, (n - 1) / 2);
+    }
+
+    public void resetCounters() {
+        this.countPower.reset();
+        this.countFastPower.reset();
     }
 }
