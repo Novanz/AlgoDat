@@ -1,21 +1,21 @@
 public class PowerFunctionsTest {
     // nloops:= Anzahl Loops, v:= Version (power = 0, fastPower = 1)
-    public static void looper(PowerFunctions powerFunctions, int nloops, int v) {
+    public static void looper(PowerFunctions pf, int nloops, int v) {
         double mid_exp = 0.0;
         double mid_mx_needed = 0.0;
 
         for (int i = 0; i < nloops; i++) {
-            powerFunctions.setZahl(Math.random());
-            powerFunctions.setExponent((int) (Math.random() * 1000) + 1);// 0 bis 1000
+            pf.setZahl(Math.random());
+            pf.setExponent((int) (Math.random() * 1000) + 1);// 0 bis 1000
             if (v == 0) {
-                powerFunctions.power(powerFunctions.getZahl(), powerFunctions.getExponent());
-                mid_mx_needed += powerFunctions.getCountPower();
+                pf.power(pf.getZahl(), pf.getExponent());
+                mid_mx_needed += pf.getCountPower();
             } else {
-                powerFunctions.fastPower(powerFunctions.getZahl(), powerFunctions.getExponent());
-                mid_mx_needed += powerFunctions.getCountFastPower();
+                pf.fastPower(pf.getZahl(), pf.getExponent());
+                mid_mx_needed += pf.getCountFastPower();
             }
-            powerFunctions.resetCounters();
-            mid_exp += powerFunctions.getExponent();
+            pf.resetCounters();
+            mid_exp += pf.getExponent();
         }
 
         System.out.println(mid_exp / nloops);

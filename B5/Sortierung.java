@@ -1,11 +1,12 @@
 public class Sortierung {
-    public static void mergeSort(Integer[] array) {
+    public static <T extends Comparable<T>> void mergeSort(T[] array) {
         if (array == null || array.length <= 1) {
             return;
         }
         int mid = array.length / 2;
-        Integer[] left = new Integer[mid];
-        Integer[] right = new Integer[array.length - mid];
+        // FIX: split declaration?
+        T[] left = (T[]) new Comparable[mid];
+        T[] right = (T[]) new Comparable[array.length - mid];
 
         // Copy elements to left and right subarrays
         System.arraycopy(array, 0, left, 0, mid);
@@ -19,12 +20,12 @@ public class Sortierung {
         merge(left, right, array);
     }
 
-    private static void merge(Integer[] left, Integer[] right, Integer[] array) {
+    private static <T extends Comparable<T>> void merge(T[] left, T[] right, T[] array) {
         int i = 0, j = 0, k = 0;
 
         // Compare elements from left and right subarrays and merge them in sorted order
         while (i < left.length && j < right.length) {
-            if (left[i] <= right[j]) {
+            if (left[i].compareTo(right[j]) <= 0) {
                 array[k++] = left[i++];
             } else {
                 array[k++] = right[j++];
@@ -42,9 +43,9 @@ public class Sortierung {
         }
     }
 
-    private static void printArray(int[] array) {
-        for (int num : array) {
-            System.out.print(num + " ");
+    public static <T extends Comparable<T>> void printArray(T[] array) {
+        for (T item : array) {
+            System.out.print(item + " ");
         }
         System.out.println();
     }
