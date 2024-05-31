@@ -18,10 +18,10 @@
 
 - [x] Fertig
 - [x] Hochgeladen
-- [] Bewertet
+- [x] Bewertet
 
 ## B 5
 
-- [] Fertig
-- [] Hochgeladen
-- [] Bewertet
+- [x] Fertig
+- [x] Hochgeladen
+- [ ] Bewertet
