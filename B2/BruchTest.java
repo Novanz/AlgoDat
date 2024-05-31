@@ -1,4 +1,13 @@
 public class BruchTest {
+    public static void prettyCompare(int n) {
+        if (n == 0) {
+            System.out.println("Objekte sind gleich.");
+        } else if (n == -1) {
+            System.out.println("Objekt 1 ist kleiner als Objekt 2");
+        } else {
+            System.out.println("Objekt 1 ist großer als Objekt 2");
+        }
+    }
     public static void main(String[] args) {
         /*
           Konstruktor Tests:
@@ -66,5 +75,9 @@ public class BruchTest {
         Bruch b8 = b6.div(b1);
         System.out.println("SOLL:\t 14 / 21");
         System.out.println("IST:\t" + b8.toString() + "\n");
+        System.out.println("Compare b7 to b8");
+        prettyCompare(b7.compareTo(b7));// gleich
+        prettyCompare(b7.compareTo(b8));// kleiner
+        prettyCompare(b8.compareTo(b7));// großer
     }
 }

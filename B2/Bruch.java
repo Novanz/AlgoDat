@@ -1,4 +1,4 @@
-public class Bruch {
+public class Bruch implements Comparable<Bruch> {
     private int num; // Zähler
     private int denom; // Nenner
 
@@ -43,7 +43,6 @@ public class Bruch {
     }
 
     /* Arithmetik */
-    // TODO: add(),sub(),div(),mult()
     public Bruch add(Bruch other) {
         int num = this.num * other.denom + other.num * this.denom;
         int denom = this.denom * other.denom;
@@ -71,7 +70,7 @@ public class Bruch {
     }
 
     /* sonstige Hilfsmethoden */
-    // TODO: clone(),equals(),compare()
+    // TODO: clone()
     private int ggt() { // ggT iterativ
         int a = Math.abs(num); // falls Zähler negativ
         int b = denom;
@@ -96,4 +95,18 @@ public class Bruch {
         }
     }
 
+    public double toDouble() {
+        return (double) num / (double) denom;
+    }
+
+    public boolean equals(Bruch other) {
+        return num == other.num & denom == other.denom;
+    }
+
+    public int compareTo(Bruch other) {
+        if (this.equals(other)) {
+            return 0;
+        }
+        return this.toDouble() > other.toDouble() ? 1 : -1;
+    }
 }
