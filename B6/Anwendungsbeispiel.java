@@ -26,7 +26,6 @@ public class Anwendungsbeispiel {
                 EUR_total += zahlungsmittel.getWert();
             } else if (zahlungsmittel.getWaehrung().compareTo("SFR") == 0) {
                 SFR_total += zahlungsmittel.getWert();
-                //System.out.println(zahlungsmittel.getClass());
             } else {
                 USD_total += zahlungsmittel.getWert();
             }
@@ -34,5 +33,33 @@ public class Anwendungsbeispiel {
         System.out.println("EUR =" + EUR_total);
         System.out.println("SFR =" + SFR_total);
         System.out.println("USD =" + USD_total);
+
+        // Aufgabe 3 Gewicht und Flaeche
+        double total_weight = 0;
+        double total_area = 0;
+
+        for (Zahlungsmittel zahlungsmittel : geld) {
+            if (zahlungsmittel.getClass() == SFR_Muenze.class) {
+                SFR_Muenze sfrMuenze = (SFR_Muenze) zahlungsmittel;
+                total_weight += sfrMuenze.getGewicht();
+            } else if (zahlungsmittel.getClass() == EUR_Muenze.class) {
+                EUR_Muenze eurMuenze = (EUR_Muenze) zahlungsmittel;
+                total_weight += eurMuenze.getGewicht();
+            } else if (zahlungsmittel.getClass() == USD_Muenze.class) {
+                USD_Muenze usdMuenze = (USD_Muenze) zahlungsmittel;
+                total_weight += usdMuenze.getGewicht();
+            } else if (zahlungsmittel.getClass() == SFR_Schein.class) {
+                SFR_Schein sfrSchein = (SFR_Schein) zahlungsmittel;
+                total_area += sfrSchein.getBreite() * sfrSchein.getLaenge();
+            } else if (zahlungsmittel.getClass() == EUR_Schein.class) {
+                EUR_Schein eurSchein = (EUR_Schein) zahlungsmittel;
+                total_area += eurSchein.getBreite() * eurSchein.getLaenge();
+            } else if (zahlungsmittel.getClass() == USD_Schein.class) {
+                USD_Schein usdSchein = (USD_Schein) zahlungsmittel;
+                total_area += usdSchein.getBreite() * usdSchein.getLaenge();
+            }
+        }
+        System.out.println(total_weight + " gramm");
+        System.out.println(total_area + " cm²");
     }
 }
