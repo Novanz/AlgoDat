@@ -30,9 +30,9 @@ public class Anwendungsbeispiel {
                 USD_total += zahlungsmittel.getWert();
             }
         }
-        System.out.println("EUR =" + EUR_total);
-        System.out.println("SFR =" + SFR_total);
-        System.out.println("USD =" + USD_total);
+        System.out.println("Gesamtwert EUR =" + EUR_total);
+        System.out.println("Gesamtwert SFR =" + SFR_total);
+        System.out.println("Gesamtwert USD =" + USD_total);
 
         // Aufgabe 3 Gewicht und Flaeche
         double total_weight = 0;
@@ -59,7 +59,25 @@ public class Anwendungsbeispiel {
                 total_area += usdSchein.getBreite() * usdSchein.getLaenge();
             }
         }
-        System.out.println(total_weight + " gramm");
-        System.out.println(total_area + " cm²");
+        System.out.println("Gesamtgewicht aller Muenzen ist " + total_weight + " Gramm");
+        System.out.println("Gesamtflaeche aller Scheine ist " + total_area + " cm²");
+
+        // Aufgabe 4 Höhe des Stapels
+        double total_height = 0;
+
+        for (Zahlungsmittel zahlungsmittel : geld) {
+            if (zahlungsmittel.getClass() == SFR_Muenze.class) {
+                SFR_Muenze sfrMuenze = (SFR_Muenze) zahlungsmittel;
+                total_height += sfrMuenze.getDicke();
+            } else if (zahlungsmittel.getClass() == EUR_Muenze.class) {
+                EUR_Muenze eurMuenze = (EUR_Muenze) zahlungsmittel;
+                total_height += eurMuenze.getDicke();
+            } else if (zahlungsmittel.getClass() == USD_Muenze.class) {
+                USD_Muenze usdMuenze = (USD_Muenze) zahlungsmittel;
+                total_height += usdMuenze.getDicke();
+            }
+        }
+        System.out.println("Gesamthöhe aller Muenzen ist " + total_height + " cm ");
+        // Aufgabe 5
     }
 }
