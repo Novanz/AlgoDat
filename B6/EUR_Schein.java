@@ -31,5 +31,13 @@ public class EUR_Schein extends EUR implements Schein {
 	        return x;
 	   return null;
 	}
-	
+
+	@Override
+	public int compareTo(Zahlungsmittel other) {
+		if (this.getWert() == other.getWert()) {
+			return 0;
+		} else {
+			return this.getWert() > other.getWert() ? 1 : -1;
+		}
+	}
 }

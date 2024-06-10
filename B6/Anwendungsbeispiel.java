@@ -12,12 +12,10 @@ public class Anwendungsbeispiel {
                 new EUR_Muenze(0.50), new EUR_Muenze(0.01), new SFR_Schein(10),
                 new SFR_Schein(20), new SFR_Muenze(0.50), new SFR_Muenze(0.02)};
 //      Aufgabe 1
-//      for(Zahlungsmittel zahlungsmittel : geld) {
-//          System.out.println(zahlungsmittel);
-//      }
-
+        for (Zahlungsmittel zahlungsmittel : geld) {
+            System.out.println(zahlungsmittel);
+        }
 //      Aufgabe 2
-//
         double EUR_total = 0;
         double SFR_total = 0;
         double USD_total = 0;
@@ -79,5 +77,15 @@ public class Anwendungsbeispiel {
         }
         System.out.println("Gesamthöhe aller Muenzen ist " + total_height + " cm ");
         // Aufgabe 5
+
+        System.out.println("Original array:");
+        for (Zahlungsmittel zahlungsmittel : geld) {
+            System.out.println(zahlungsmittel);
+        }
+        System.out.println("Sortierter array:");
+        Sortierung.mergeSort(geld);
+        for (Zahlungsmittel zahlungsmittel : geld) {
+            System.out.println(zahlungsmittel);
+        }
     }
 }

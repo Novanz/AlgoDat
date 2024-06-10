@@ -32,5 +32,13 @@ public class USD_Schein extends USD implements Schein {
 	        return x;
 	   return null;
 	}
+
+	public int compareTo(Zahlungsmittel other) {
+		if (this.getWert() == other.getWert()) {
+			return 0;
+		} else {
+			return this.getWert() > other.getWert() ? 1 : -1;
+		}
+	}
 	
 }
