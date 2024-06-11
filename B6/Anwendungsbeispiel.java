@@ -1,3 +1,5 @@
+import java.util.stream.IntStream;
+
 public class Anwendungsbeispiel {
     public static void main(String[] args) {
         Zahlungsmittel geld[] = {new USD_Muenze(0.10), new USD_Schein(20), new SFR_Schein(5),
@@ -11,15 +13,30 @@ public class Anwendungsbeispiel {
                 new USD_Muenze(0.50), new EUR_Schein(50), new USD_Schein(5),
                 new EUR_Muenze(0.50), new EUR_Muenze(0.01), new SFR_Schein(10),
                 new SFR_Schein(20), new SFR_Muenze(0.50), new SFR_Muenze(0.02)};
-//      Aufgabe 1
-        for (Zahlungsmittel zahlungsmittel : geld) {
-            System.out.println(zahlungsmittel);
+        // NOTE: foreach to stream
+        int new_length = (int) IntStream.range(0, geld.length).filter(i -> geld[i].wertIstGueltig()).count();
+        //        for (int i = 0; i < geld.length; i++) {
+//            if (geld[i].wertIstGueltig()) {
+//                new_length++;
+//            }
+//        }
+        int ungultig = geld.length - new_length;
+        Zahlungsmittel[] valid_array = new Zahlungsmittel[new_length];
+        for (int i = 0, j = 0; i < geld.length; i++) {
+            if (geld[i].wertIstGueltig()) {
+                valid_array[j] = geld[i];
+                j++;
+                System.out.println(geld[i]);
+            }
         }
+        System.out.println("Anzahl der ungueltigen Werte " + ungultig);
+
+
 //      Aufgabe 2
         double EUR_total = 0;
         double SFR_total = 0;
         double USD_total = 0;
-        for (Zahlungsmittel zahlungsmittel : geld) {
+        for (Zahlungsmittel zahlungsmittel : valid_array) {
             if (zahlungsmittel.getWaehrung().compareTo("EUR") == 0) {
                 EUR_total += zahlungsmittel.getWert();
             } else if (zahlungsmittel.getWaehrung().compareTo("SFR") == 0) {
@@ -36,7 +53,7 @@ public class Anwendungsbeispiel {
         double total_weight = 0;
         double total_area = 0;
 
-        for (Zahlungsmittel zahlungsmittel : geld) {
+        for (Zahlungsmittel zahlungsmittel : valid_array) {
             if (zahlungsmittel.getClass() == SFR_Muenze.class) {
                 SFR_Muenze sfrMuenze = (SFR_Muenze) zahlungsmittel;
                 total_weight += sfrMuenze.getGewicht();
@@ -63,7 +80,7 @@ public class Anwendungsbeispiel {
         // Aufgabe 4 Höhe des Stapels
         double total_height = 0;
 
-        for (Zahlungsmittel zahlungsmittel : geld) {
+        for (Zahlungsmittel zahlungsmittel : valid_array) {
             if (zahlungsmittel.getClass() == SFR_Muenze.class) {
                 SFR_Muenze sfrMuenze = (SFR_Muenze) zahlungsmittel;
                 total_height += sfrMuenze.getDicke();
@@ -79,12 +96,12 @@ public class Anwendungsbeispiel {
         // Aufgabe 5
 
         System.out.println("Original array:");
-        for (Zahlungsmittel zahlungsmittel : geld) {
+        for (Zahlungsmittel zahlungsmittel : valid_array) {
             System.out.println(zahlungsmittel);
         }
         System.out.println("Sortierter array:");
-        Sortierung.mergeSort(geld);
-        for (Zahlungsmittel zahlungsmittel : geld) {
+        Sortierung.mergeSort(valid_array);
+        for (Zahlungsmittel zahlungsmittel : valid_array) {
             System.out.println(zahlungsmittel);
         }
     }
