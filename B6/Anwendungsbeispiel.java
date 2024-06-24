@@ -104,5 +104,14 @@ public class Anwendungsbeispiel {
         for (Zahlungsmittel zahlungsmittel : valid_array) {
             System.out.println(zahlungsmittel);
         }
+        // stream tests
+        double test_area = 0;
+
+        for (Zahlungsmittel z : valid_array) {
+            if (z instanceof Schein) {
+                test_area += ((Schein) z).getBreite() * ((Schein) z).getLaenge();
+            }
+        }
+        System.out.println(test_area / 10);
     }
 }
