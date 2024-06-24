@@ -31,5 +31,17 @@ public class MyListTest {
         System.out.println();
         System.out.println("current size " + bruchMyList.size());
         //System.out.println(bruchMyList.size());
+        // Test exceptions
+        try {
+            System.out.println(bruchMyList.remove(11));
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        try {
+            System.out.println(bruchMyList.get(11));
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 }

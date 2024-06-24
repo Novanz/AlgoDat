@@ -18,14 +18,14 @@ public class MyList<E> implements Iterable<E> {
 
     public E get(int i) {
         if (i < 0 || i >= size) {
-            throw new IndexOutOfBoundsException("Index: " + i + ", Size: " + size);
+            throw new IndexOutOfBoundsException("failed to get() Element at index: " + i + ", Size: " + size);
         }
         return elements[i];
     }
 
     public E remove(int i) {
         if (i < 0 || i >= size) {
-            throw new IndexOutOfBoundsException("Index: " + i + ", Size: " + size);
+            throw new IndexOutOfBoundsException("failed to remove() element at index: " + i + ", Size: " + size);
         }
         E removedElement = elements[i];
         System.arraycopy(elements, i + 1, elements, i, size - i - 1);
